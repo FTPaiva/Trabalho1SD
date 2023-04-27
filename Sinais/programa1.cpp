@@ -6,17 +6,17 @@
 
 int main(int argc, char* argv[]) {
 
-    // Verifica o numero de argumentos de entrada
+    // Verifica o número de argumentos de entrada
     if (argc != 3) {
-        printf("O numero de argumentos esta diferente de 3.\n");
+        printf("Por favor, passe como parâmetro apenas o PID e sinal.");
         return 1;
     }
 
-    // Obtem argumentos de entrada
+    // Obtém argumentos de entrada
     int pid = std::stoi(argv[1]);
     int signal = std::stoi(argv[2]);
 
-    // Testa se proceso existe e, caso positivo, envia o sinal
+    // Testa se processo existe e, caso positivo, envia o sinal
     if (kill(pid, 0) == -1) {
         printf("O processo dado nao existe.\n");
         return -1;
